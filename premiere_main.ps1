@@ -1,7 +1,5 @@
 # URL du fichier JSON de configuration
-$ConfigUrl = "https://raw.githubusercontent.com/dany17220/Premiere-main/refs/heads/main/apps.json?token=GHSAT0AAAAAADKYFVOLJNILXEWC7MY2VZBK2GPB2YA"
-
-if (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) { Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs; exit }
+$ConfigUrl = "https://raw.githubusercontent.com/dany17220/Premiere-main/refs/heads/main/apps.json"
 
 # Charger config depuis le web
 $appsConfig = (Invoke-WebRequest -Uri $ConfigUrl -UseBasicParsing).Content | ConvertFrom-Json
@@ -53,4 +51,5 @@ while ($true) {
         }
     }
 }
+
 
